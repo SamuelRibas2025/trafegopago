@@ -1,0 +1,429 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f6; /* Light background */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: #0f2027; /* Dark blue/grey */
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+a {
+    text-decoration: none;
+    color: #2c5364; /* Medium blue */
+}
+
+/* Buttons */
+.cta-button, button[type="submit"] {
+    display: inline-block;
+    background: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:hover, button[type="submit"]:not(.loading):hover {
+    background: #45a049; /* Darker green */
+    transform: translateY(-3px);
+}
+
+button[type="submit"].loading {
+    background: #ccc; /* Grey when loading */
+    cursor: not-allowed;
+}
+
+button[type="submit"] .loading-spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+button[type="submit"].loading .button-text {
+    visibility: hidden;
+}
+
+button[type="submit"].loading .loading-spinner {
+    display: block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('https://sdmntprcentralus.oaiusercontent.com/files/00000000-7f3c-61f5-bf72-e59c2bdc07f3/raw?se=2025-05-16T02%3A39%3A02Z&sp=r&sv=2024-08-04&sr=b&scid=00000000-0000-0000-0000-000000000000&skoid=b64a43d9-3512-45c2-98b4-dea55d094240&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-15T22%3A15%3A03Z&ske=2025-05-16T22%3A15%3A03Z&sks=b&skv=2024-08-04&sig=QcghLR3hj/tjnggf%2Br2oExprnQgloKYxBNW92rXHSAA%3D') no-repeat center center/cover; /* Add your background image */
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 3.5em;
+}
+
+.hero-content .subheadline {
+    color: #ddd;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-item i {
+    font-size: 3em;
+    color: #2c5364; /* Medium blue */
+    margin-bottom: 20px;
+}
+
+.benefit-item h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.benefit-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Form Section */
+.form-section {
+    padding: 80px 0;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Dark blue gradient */
+    color: white;
+}
+
+.form-section h2, .form-section p {
+    color: white;
+}
+
+#leadForm {
+    max-width: 500px;
+    margin: 40px auto 20px auto;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #ddd;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.15); /* More transparent */
+    color: white;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.form-group input::placeholder, .form-group select {
+    color: #ccc;
+}
+
+.form-group input:focus, .form-group select:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.mensagem {
+    margin-top: 20px;
+    font-size: 1em;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    color: white; /* Default color */
+}
+
+.mensagem.sucesso {
+    color: #8bc34a; /* Light green for success */
+    opacity: 1;
+}
+
+.mensagem.erro {
+    color: #ff9800; /* Orange for error */
+    opacity: 1;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: #f4f7f6;
+    text-align: center;
+}
+
+.testimonials-slider {
+    /* Basic static layout - implement slider logic in JS if needed */
+    display: flex;
+    overflow-x: auto; /* Enable scrolling if needed */
+    gap: 30px;
+    justify-content: center; /* Center items if few */
+}
+
+.testimonial-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    max-width: 400px;
+    min-width: 300px; /* Minimum width */
+    text-align: left;
+    flex-shrink: 0; /* Prevent shrinking in flex container */
+}
+
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.testimonial-author span {
+    font-weight: 600;
+    color: #333;
+}
+
+
+/* Footer */
+footer {
+    background-color: #0f2027; /* Dark blue */
+    color: #ddd;
+    padding: 40px 0 20px 0;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-info, .footer-social {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-info h3, .footer-social h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    color: #bbb;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.footer-social a {
+    color: #ddd;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #2c5364; /* Medium blue */
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #334;
+    padding-top: 20px;
+    color: #bbb;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .hero-section {
+        padding: 80px 0;
+    }
+
+    .hero-content .subheadline {
+        font-size: 1.1em;
+    }
+
+    .benefits-section, .form-section, .testimonials-section {
+        padding: 60px 0;
+    }
+
+    .benefit-item {
+        padding: 20px;
+    }
+
+    #leadForm {
+        padding: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info, .footer-social {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .footer-social a {
+        margin: 0 10px;
+    }
+
+     .testimonials-slider {
+        justify-content: flex-start; /* Allow scrolling on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+     .hero-content .subheadline {
+        font-size: 1em;
+    }
+
+    .cta-button, button[type="submit"] {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    .benefit-item i {
+        font-size: 2.5em;
+    }
+
+    .form-group input, .form-group select {
+        font-size: 0.9em;
+    }
+}
